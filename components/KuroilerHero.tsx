@@ -40,7 +40,7 @@ export default function KuroilerHero() {
             >
                 <div className="relative w-full h-full">
                     <Image
-                        src="/Gemini_Generated_Image_2ctedk2ctedk2cte_nobg_ai.png"
+                        src="/chicks_enhanced_nobg.png"
                         alt="Vector KukuConnect Chick Illustration"
                         priority
                         fetchPriority="high"
