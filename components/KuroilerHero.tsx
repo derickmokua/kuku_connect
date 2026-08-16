@@ -36,11 +36,11 @@ export default function KuroilerHero() {
             <m.div
                 animate={{ y: [-8, 8, -8] }}
                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                className="relative w-full h-full z-10 mx-auto flex items-center justify-center scale-110 md:scale-[1.25] -mt-4 md:-mt-8"
+                className="relative w-[95%] h-[95%] z-10 mx-auto flex items-center justify-center"
             >
                 <div className="relative w-full h-full">
                     <Image
-                        src="/ChatGPT_Image_nobg.png"
+                        src="/Gemini_Generated_Image_2ctedk2ctedk2cte_nobg_ai.png"
                         alt="Vector KukuConnect Chick Illustration"
                         priority
                         fetchPriority="high"
