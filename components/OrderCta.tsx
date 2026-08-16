@@ -112,59 +112,70 @@ function orderUrl(productId?: string) {
     return `${ORDER_APP_URL}?product=${encodeURIComponent(productId)}`;
 }
 
-function PriceCardView({ card }: { card: PriceCard }) {
+function PriceCardView({ card, index = 0 }: { card: PriceCard; index?: number }) {
     return (
-        <div
-            className={`relative flex flex-col p-6 md:p-7 rounded-[2.5rem] bg-white shadow-lg shadow-slate-200/50 transition-all duration-300 hover:shadow-2xl overflow-hidden group ${
+        <m.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            className={`relative flex flex-col p-6 md:p-8 rounded-[2.5rem] bg-white transition-all duration-500 overflow-hidden group ${
                 card.popular
-                    ? "border-2 border-brand-dark ring-4 ring-brand-dark/10 md:scale-105 z-10 hover:-translate-y-2"
-                    : "border border-slate-200 hover:-translate-y-2 hover:border-brand-dark/30 hover:shadow-brand-dark/10"
+                    ? "border-2 border-brand-dark ring-4 ring-brand-dark/10 shadow-glow-primary md:scale-105 z-10 hover:-translate-y-2 hover:shadow-glow-primary-hover"
+                    : "border border-slate-100 shadow-lg shadow-slate-200/50 hover:-translate-y-2 hover:border-brand-dark/30 hover:shadow-glow-primary"
             }`}
         >
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            
             {card.popular && (
-                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-brand-dark to-brand-hover text-white text-[10px] font-bold px-3 py-1.5 text-center uppercase tracking-widest rounded-t-[1.6rem]">
-                    Most popular
+                <div className="absolute -top-1 right-6 bg-gradient-to-b from-brand-dark to-brand-hover text-white text-[10px] font-extrabold px-3 pt-3 pb-2 text-center uppercase tracking-widest rounded-b-xl shadow-md">
+                    Most Popular
                 </div>
             )}
-            <div className={card.popular ? "mt-6" : ""}>
-                <h3 className="text-xl font-extrabold text-surface-dark">{card.label}</h3>
+            
+            <div className="relative z-10 flex flex-col h-full">
+                <h3 className="text-2xl font-extrabold text-surface-dark tracking-tight">{card.label}</h3>
                 <p className="mt-2 text-sm text-slate-500 font-medium leading-relaxed min-h-[40px]">
                     {card.note}
                 </p>
-                <p className="mt-4 flex items-baseline gap-1 border-t border-slate-100 pt-4">
-                    <span className="text-sm font-bold text-surface-dark">KES</span>
-                    <span className="text-4xl font-extrabold text-surface-dark tracking-tight">
+                
+                <div className="mt-5 flex items-baseline gap-1 border-t border-slate-100 pt-5 mb-6">
+                    <span className="text-sm font-bold text-slate-400">KES</span>
+                    <span className="text-5xl font-extrabold text-surface-dark tracking-tighter">
                         {card.price}
                     </span>
-                    {card.unit && (
-                        <span className="text-sm font-semibold text-slate-500">{card.unit}</span>
-                    )}
-                    {!card.unit && (
-                        <span className="text-sm font-semibold text-slate-500"> / bird</span>
-                    )}
-                </p>
-                <ul className="mt-4 space-y-2 mb-6">
+                    <span className="text-sm font-semibold text-slate-400 ml-1">
+                        {card.unit ? card.unit : "/ bird"}
+                    </span>
+                </div>
+                
+                <ul className="space-y-3 mb-8">
                     {card.features.map((f) => (
                         <li
                             key={f}
-                            className="flex items-start gap-2 text-sm text-slate-600 font-medium"
+                            className="flex items-start gap-3 text-sm text-slate-600 font-medium"
                         >
-                            <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                            <div className="bg-emerald-50 p-1 rounded-full text-emerald-500 shrink-0 mt-0.5">
+                                <CheckCircle className="w-3.5 h-3.5" />
+                            </div>
                             {f}
                         </li>
                     ))}
                 </ul>
+                
                 <a
                     href={orderUrl(card.orderHint)}
                     aria-label={`Order ${card.label} on app`}
-                    className="mt-auto w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-brand-dark to-brand-hover shadow-md shadow-brand-dark/20 hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                    className="mt-auto w-full relative inline-flex items-center justify-center gap-2 py-4 rounded-full font-bold text-white bg-surface-dark overflow-hidden group/btn shadow-md hover:shadow-lg transition-all"
                 >
-                    Order on app
-                    <ArrowRight className="w-4 h-4" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-brand-dark to-brand-hover opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
+                    <span className="relative z-10 flex items-center gap-2 group-hover/btn:-translate-y-0.5 transition-transform">
+                        Order on app
+                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </span>
                 </a>
             </div>
-        </div>
+        </m.div>
     );
 }
 
@@ -242,22 +253,22 @@ export default function OrderCta() {
 
                 <SectionTitle>Chicks (day old – 1 month)</SectionTitle>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mb-16">
-                    {CHICK_PRICES.map((card) => (
-                        <PriceCardView key={card.id} card={card} />
+                    {CHICK_PRICES.map((card, idx) => (
+                        <PriceCardView key={card.id} card={card} index={idx} />
                     ))}
                 </div>
 
                 <SectionTitle>Mature birds</SectionTitle>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto mb-16">
-                    {MATURE_PRICES.map((card) => (
-                        <PriceCardView key={card.id} card={card} />
+                    {MATURE_PRICES.map((card, idx) => (
+                        <PriceCardView key={card.id} card={card} index={idx} />
                     ))}
                 </div>
 
                 <SectionTitle>Eggs</SectionTitle>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto mb-14">
-                    {EGG_PRICES.map((card) => (
-                        <PriceCardView key={card.id} card={card} />
+                    {EGG_PRICES.map((card, idx) => (
+                        <PriceCardView key={card.id} card={card} index={idx} />
                     ))}
                 </div>
 
