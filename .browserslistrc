@@ -1,0 +1,5 @@
+defaults
+not IE 11
+not IE_Mob 11
+> 0.3%
+supports es6-module
