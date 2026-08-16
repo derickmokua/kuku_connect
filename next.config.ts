@@ -60,6 +60,21 @@ const nextConfig: NextConfig = {
         destination: '/?assistant=true',
         permanent: false,
       },
+      {
+        source: '/Ai_assisitant',
+        destination: '/?assistant=true',
+        permanent: false,
+      },
+      {
+        source: '/Ai_assistant',
+        destination: '/?assistant=true',
+        permanent: false,
+      },
+      {
+        source: '/ai-assistant',
+        destination: '/?assistant=true',
+        permanent: false,
+      },
       // Orders live on the FMS public form — no cart on marketing site
       {
         source: '/checkout',

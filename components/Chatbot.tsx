@@ -21,6 +21,15 @@ export function Chatbot() {
         scrollToBottom();
     }, [messages, isOpen]);
 
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get("assistant") === "true") {
+                setIsOpen(true);
+            }
+        }
+    }, [setIsOpen]);
+
     const sendMessage = async () => {
         if (!input.trim() || isLoading) return;
 
