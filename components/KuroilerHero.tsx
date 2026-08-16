@@ -36,7 +36,7 @@ export default function KuroilerHero() {
             <m.div
                 animate={{ y: [-8, 8, -8] }}
                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                className="relative w-[110%] h-[110%] z-10 mx-auto flex items-center justify-center"
+                className="relative w-full h-full z-10 mx-auto flex items-center justify-center scale-[1.15]"
             >
                 <div className="relative w-full h-full">
                     <Image
