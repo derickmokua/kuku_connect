@@ -22,7 +22,7 @@ export default function Footer() {
                         <div className="flex items-center space-x-3">
                             <span className="font-extrabold text-3xl text-white tracking-tight">Kuku<span className="text-[#C2410C]">Connect.</span></span>
                         </div>
-                        <p className="text-slate-400 text-sm leading-relaxed max-w-xs font-medium">
+                        <p className="text-slate-300 text-sm leading-relaxed max-w-xs font-medium">
                             The High-Yield Poultry System. We supply hardened Kuroilers and the scientific routine to ensure your success.
                         </p>
                     </div>
@@ -119,7 +119,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-8 mt-12 flex justify-center items-center gap-4 text-xs font-bold text-slate-500">
+                <div className="border-t border-white/10 pt-8 mt-12 flex justify-center items-center gap-4 text-xs font-bold text-slate-400">
                     <p>© {new Date().getFullYear()} KukuConnect. All rights reserved.</p>
                 </div>
             </div>
