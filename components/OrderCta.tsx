@@ -138,10 +138,10 @@ function PriceCardView({ card }: { card: PriceCard }) {
                         {card.price}
                     </span>
                     {card.unit && (
-                        <span className="text-sm font-semibold text-slate-400">{card.unit}</span>
+                        <span className="text-sm font-semibold text-slate-500">{card.unit}</span>
                     )}
                     {!card.unit && (
-                        <span className="text-sm font-semibold text-slate-400"> / bird</span>
+                        <span className="text-sm font-semibold text-slate-500"> / bird</span>
                     )}
                 </p>
                 <ul className="mt-4 space-y-2 mb-6">
@@ -157,6 +157,7 @@ function PriceCardView({ card }: { card: PriceCard }) {
                 </ul>
                 <a
                     href={orderUrl(card.orderHint)}
+                    aria-label={`Order ${card.label} on app`}
                     className="mt-auto w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-[#C2410C] to-[#ea580c] shadow-md shadow-[#C2410C]/20 hover:shadow-lg hover:-translate-y-0.5 transition-all"
                 >
                     Order on app

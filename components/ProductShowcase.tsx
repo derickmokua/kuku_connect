@@ -195,7 +195,7 @@ function ProductCard({
                     {product.price}
                 </span>
                 {product.unit && (
-                    <span className="text-sm font-bold text-slate-400 self-end mb-2">
+                    <span className="text-sm font-bold text-slate-500 self-end mb-2">
                         {product.unit}
                     </span>
                 )}
@@ -213,6 +213,7 @@ function ProductCard({
             <div className="mt-auto">
                 <a
                     href={ORDER_APP_URL}
+                    aria-label={`Order ${product.title} on app`}
                     className="w-full py-4 text-white rounded-full font-bold text-lg flex items-center justify-center gap-2 shadow-lg shadow-[#FF8A00]/20 hover:shadow-xl transition-all transform hover:-translate-y-0.5 bg-gradient-to-r from-[#FF8A00] to-[#FF6B00]"
                 >
                     Order on app <ArrowRight className="w-5 h-5" />

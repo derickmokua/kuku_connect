@@ -68,6 +68,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://apis.google.com" />
+      </head>
       <body className={`${inter.variable} ${outfit.variable} font-sans antialiased bg-[#FFFCF8] text-slate-800`}>
         <Providers>
           {children}
