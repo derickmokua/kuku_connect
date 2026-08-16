@@ -13,16 +13,16 @@ function WhatsAppIcon(props: React.SVGProps<SVGSVGElement>) {
 
 export default function ContactSection() {
     return (
-        <section id="contact" className="py-24 px-4 bg-[#FAFAFA] border-t border-slate-200">
+        <section id="contact" className="py-24 px-4 bg-surface-light border-t border-slate-200">
             <div className="max-w-6xl mx-auto">
                 <div className="bg-white rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row relative border border-slate-200">
 
                     {/* Info Side */}
-                    <div className="p-6 sm:p-10 md:p-16 text-[#0F172A] bg-[#F1F5F9] md:w-2/5 flex flex-col justify-between relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-[#FF5C00] rounded-full blur-[100px] opacity-20 translate-x-1/2 -translate-y-1/2"></div>
+                    <div className="p-6 sm:p-10 md:p-16 text-surface-dark bg-[#F1F5F9] md:w-2/5 flex flex-col justify-between relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-light rounded-full blur-[100px] opacity-20 translate-x-1/2 -translate-y-1/2"></div>
 
                         <div>
-                            <h2 className="text-4xl font-extrabold mb-6 text-[#0F172A]">Mother Hen Support</h2>
+                            <h2 className="text-4xl font-extrabold mb-6 text-surface-dark">Mother Hen Support</h2>
                             <p className="text-slate-600 mb-10 leading-relaxed text-lg">
                                 Need advice on brooding, vaccines, or scaling your kuku? Our mother hens are ready to help.
                             </p>
@@ -30,21 +30,21 @@ export default function ContactSection() {
                             <ul className="space-y-6">
                                 <li className="flex items-center gap-4">
                                     <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-slate-200 shadow-sm">
-                                        <Phone className="w-5 h-5 text-[#C2410C]" />
+                                        <Phone className="w-5 h-5 text-brand-dark" />
                                     </div>
-                                    <span className="font-bold tracking-wide text-[#0F172A]">+254 716883375</span>
+                                    <span className="font-bold tracking-wide text-surface-dark">+254 716883375</span>
                                 </li>
                                 <li className="flex items-center gap-4">
                                     <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-slate-200 shadow-sm">
-                                        <Mail className="w-5 h-5 text-[#C2410C]" />
+                                        <Mail className="w-5 h-5 text-brand-dark" />
                                     </div>
-                                    <span className="font-bold tracking-wide text-[#0F172A]">kukuconnect@outlook.com</span>
+                                    <span className="font-bold tracking-wide text-surface-dark">kukuconnect@outlook.com</span>
                                 </li>
                                 <li className="flex items-center gap-4">
                                     <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center border border-slate-200 shadow-sm">
-                                        <MapPin className="w-5 h-5 text-[#C2410C]" />
+                                        <MapPin className="w-5 h-5 text-brand-dark" />
                                     </div>
-                                    <span className="font-bold tracking-wide text-[#0F172A]">Kitui Town, Kenya</span>
+                                    <span className="font-bold tracking-wide text-surface-dark">Kitui Town, Kenya</span>
                                 </li>
                             </ul>
                         </div>
@@ -52,12 +52,12 @@ export default function ContactSection() {
 
                     {/* Form Side (Replaced with WhatsApp CTA) */}
                     <div className="p-6 sm:p-10 md:p-16 bg-white md:w-3/5 flex flex-col justify-center items-center text-center relative">
-                        <div className="w-24 h-24 bg-gradient-to-tr from-[#C2410C]/10 to-[#FF8A00]/10 rounded-[2rem] flex items-center justify-center mb-8 border border-[#C2410C]/20 shadow-sm relative group">
-                            <div className="absolute inset-0 bg-[#C2410C]/5 rounded-[2rem] scale-0 group-hover:scale-100 transition-transform duration-500"></div>
-                            <WhatsAppIcon className="w-11 h-11 text-[#C2410C] relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                        <div className="w-24 h-24 bg-gradient-to-tr from-brand-dark/10 to-brand-yellow/10 rounded-[2rem] flex items-center justify-center mb-8 border border-brand-dark/20 shadow-sm relative group">
+                            <div className="absolute inset-0 bg-brand-dark/5 rounded-[2rem] scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                            <WhatsAppIcon className="w-11 h-11 text-brand-dark relative z-10 group-hover:scale-110 transition-transform duration-300" />
                         </div>
                         
-                        <p className="text-[#0F172A] text-2xl md:text-3xl font-extrabold mb-12 max-w-md leading-snug">
+                        <p className="text-surface-dark text-2xl md:text-3xl font-extrabold mb-12 max-w-md leading-snug">
                             Message our team directly on WhatsApp for immediate assistance, orders, and inquiries.
                         </p>
 
@@ -65,7 +65,7 @@ export default function ContactSection() {
                             href="https://wa.me/254716883375?text=Habari%20KukuConnect"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-[#C2410C] to-[#ea580c] text-white rounded-full font-bold text-lg shadow-lg shadow-[#C2410C]/30 hover:shadow-2xl hover:shadow-[#C2410C]/40 transition-all duration-300 hover:-translate-y-1 group"
+                            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-brand-dark to-brand-hover text-white rounded-full font-bold text-lg shadow-lg shadow-brand-dark/30 hover:shadow-2xl hover:shadow-brand-dark/40 transition-all duration-300 hover:-translate-y-1 group"
                         >
                             <WhatsAppIcon className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                             Message on WhatsApp

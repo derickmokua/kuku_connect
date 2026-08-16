@@ -15,11 +15,11 @@ export default function CheckoutRedirectPage() {
     }, []);
 
     return (
-        <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-4 bg-[#FAFAFA] text-center">
-            <p className="text-lg font-bold text-[#0F172A]">Taking you to the order form…</p>
+        <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-4 bg-surface-light text-center">
+            <p className="text-lg font-bold text-surface-dark">Taking you to the order form…</p>
             <a
                 href={ORDER_APP_URL}
-                className="text-[#C2410C] font-semibold underline underline-offset-2"
+                className="text-brand-dark font-semibold underline underline-offset-2"
             >
                 Order chicks on app.kukuconnect.co.ke
             </a>

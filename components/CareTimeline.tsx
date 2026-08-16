@@ -53,13 +53,13 @@ export default function CareTimeline() {
     }, [activeStep]);
 
     return (
-        <section className="py-12 px-4 bg-[#FAFAFA]">
+        <section className="py-12 px-4 bg-surface-light">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
-                    <span className="inline-block px-3 py-1 rounded-full bg-[#C2410C]/10 text-[#9A3412] text-xs font-bold uppercase tracking-wide mb-2 border border-[#C2410C]/20">
+                    <span className="inline-block px-3 py-1 rounded-full bg-brand-dark/10 text-[#9A3412] text-xs font-bold uppercase tracking-wide mb-2 border border-brand-dark/20">
                         Optimized for Kuroiler Genetics
                     </span>
-                    <h2 className="text-4xl font-extrabold text-[#0F172A] mb-4">The Success Routine</h2>
+                    <h2 className="text-4xl font-extrabold text-surface-dark mb-4">The Success Routine</h2>
                     <p className="text-[#6B7280] text-lg font-medium">A simple 3-step calendar to ensure your flock reaches its full weight.</p>
                 </div>
 
@@ -75,7 +75,7 @@ export default function CareTimeline() {
                                 onClick={() => setActiveStep(idx)}
                                 className={`flex items-center p-6 rounded-2xl cursor-pointer transition-all duration-500 border-2 ${activeStep === idx
                                     ? `bg-white shadow-2xl ${m.color.replace('border-', 'border-')} scale-105 relative z-10 translate-x-2`
-                                    : 'bg-[#FAFAFA] border-transparent hover:bg-slate-100 hover:translate-x-1'
+                                    : 'bg-surface-light border-transparent hover:bg-slate-100 hover:translate-x-1'
                                     }`}
                             >
                                 <div className={`w-16 h-16 rounded-full flex items-center justify-center bg-white shadow-sm border ${m.color} z-10 shrink-0`}>
@@ -83,13 +83,13 @@ export default function CareTimeline() {
                                 </div>
                                 <div className="ml-6 flex-1">
                                     <div className="flex justify-between items-center mb-1">
-                                        <h3 className="font-bold text-[#0F172A] text-xl">{m.period}</h3>
+                                        <h3 className="font-bold text-surface-dark text-xl">{m.period}</h3>
                                         <span className="text-xs font-bold uppercase text-slate-500 tracking-wider">Goal: {m.goal}</span>
                                     </div>
                                     <p className="text-[#6B7280] font-medium">{m.title}</p>
                                 </div>
                                 {activeStep === idx && (
-                                    <ChevronRight className="w-6 h-6 text-[#FF8A00] animate-pulse" />
+                                    <ChevronRight className="w-6 h-6 text-brand-yellow animate-pulse" />
                                 )}
                             </div>
                         ))}
@@ -108,20 +108,20 @@ export default function CareTimeline() {
                             >
                                 <div className={`absolute -right-10 -top-10 w-40 h-40 bg-gradient-to-br ${milestones[activeStep].color.replace('border-', 'from-')} to-transparent opacity-10 rounded-full blur-2xl`}></div>
                                 <div className="mb-8 relative z-10">
-                                    <div className="inline-block px-4 py-1.5 bg-[#FAFAFA] text-[#C2410C] font-bold rounded-full mb-4 text-sm uppercase tracking-wide border border-[#C2410C]/20 shadow-sm">
+                                    <div className="inline-block px-4 py-1.5 bg-surface-light text-brand-dark font-bold rounded-full mb-4 text-sm uppercase tracking-wide border border-brand-dark/20 shadow-sm">
                                         Goal: {milestones[activeStep].goal}
                                     </div>
-                                    <h3 className="text-3xl font-black text-[#0F172A] mb-4">{milestones[activeStep].title}</h3>
+                                    <h3 className="text-3xl font-black text-surface-dark mb-4">{milestones[activeStep].title}</h3>
                                     <p className="text-[#6B7280] text-lg leading-relaxed">
                                         {milestones[activeStep].desc}
                                     </p>
                                 </div>
 
                                 <div className="space-y-4">
-                                    <h4 className="font-bold text-[#0F172A] border-b border-slate-200 pb-2 mb-3">Critical Actions:</h4>
+                                    <h4 className="font-bold text-surface-dark border-b border-slate-200 pb-2 mb-3">Critical Actions:</h4>
                                     {milestones[activeStep].focus.map((item, i) => (
                                         <div key={i} className="flex items-center gap-3">
-                                            <div className="w-2 h-2 rounded-full bg-[#FF8A00]"></div>
+                                            <div className="w-2 h-2 rounded-full bg-brand-yellow"></div>
                                             <span className="text-[#6B7280] font-medium">{item}</span>
                                         </div>
                                     ))}

@@ -117,24 +117,24 @@ function PriceCardView({ card }: { card: PriceCard }) {
         <div
             className={`relative flex flex-col p-6 md:p-7 rounded-[2.5rem] bg-white shadow-lg shadow-slate-200/50 transition-all duration-300 hover:shadow-2xl overflow-hidden group ${
                 card.popular
-                    ? "border-2 border-[#C2410C] ring-4 ring-[#C2410C]/10 md:scale-105 z-10 hover:-translate-y-2"
-                    : "border border-slate-200 hover:-translate-y-2 hover:border-[#C2410C]/30 hover:shadow-[#C2410C]/10"
+                    ? "border-2 border-brand-dark ring-4 ring-brand-dark/10 md:scale-105 z-10 hover:-translate-y-2"
+                    : "border border-slate-200 hover:-translate-y-2 hover:border-brand-dark/30 hover:shadow-brand-dark/10"
             }`}
         >
             <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             {card.popular && (
-                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-[#C2410C] to-[#ea580c] text-white text-[10px] font-bold px-3 py-1.5 text-center uppercase tracking-widest rounded-t-[1.6rem]">
+                <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-brand-dark to-brand-hover text-white text-[10px] font-bold px-3 py-1.5 text-center uppercase tracking-widest rounded-t-[1.6rem]">
                     Most popular
                 </div>
             )}
             <div className={card.popular ? "mt-6" : ""}>
-                <h3 className="text-xl font-extrabold text-[#0F172A]">{card.label}</h3>
+                <h3 className="text-xl font-extrabold text-surface-dark">{card.label}</h3>
                 <p className="mt-2 text-sm text-slate-500 font-medium leading-relaxed min-h-[40px]">
                     {card.note}
                 </p>
                 <p className="mt-4 flex items-baseline gap-1 border-t border-slate-100 pt-4">
-                    <span className="text-sm font-bold text-[#0F172A]">KES</span>
-                    <span className="text-4xl font-extrabold text-[#0F172A] tracking-tight">
+                    <span className="text-sm font-bold text-surface-dark">KES</span>
+                    <span className="text-4xl font-extrabold text-surface-dark tracking-tight">
                         {card.price}
                     </span>
                     {card.unit && (
@@ -158,7 +158,7 @@ function PriceCardView({ card }: { card: PriceCard }) {
                 <a
                     href={orderUrl(card.orderHint)}
                     aria-label={`Order ${card.label} on app`}
-                    className="mt-auto w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-[#C2410C] to-[#ea580c] shadow-md shadow-[#C2410C]/20 hover:shadow-lg hover:-translate-y-0.5 transition-all"
+                    className="mt-auto w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-brand-dark to-brand-hover shadow-md shadow-brand-dark/20 hover:shadow-lg hover:-translate-y-0.5 transition-all"
                 >
                     Order on app
                     <ArrowRight className="w-4 h-4" />
@@ -172,7 +172,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
     return (
         <div className="flex items-center gap-4 mb-8">
             <div className="h-px bg-slate-200 flex-1" />
-            <h3 className="text-sm md:text-base font-bold text-[#C2410C] uppercase tracking-widest text-center">
+            <h3 className="text-sm md:text-base font-bold text-brand-dark uppercase tracking-widest text-center">
                 {children}
             </h3>
             <div className="h-px bg-slate-200 flex-1" />
@@ -186,19 +186,19 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
  */
 export default function OrderCta() {
     return (
-        <section id="products" className="py-24 px-4 bg-[#FAFAFA] border-t border-slate-200">
+        <section id="products" className="py-24 px-4 bg-surface-light border-t border-slate-200">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-14">
-                    <p className="text-[#C2410C] text-sm font-bold uppercase tracking-widest mb-3">
+                    <p className="text-brand-dark text-sm font-bold uppercase tracking-widest mb-3">
                         Prices
                     </p>
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-[#0F172A] mb-4">
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-surface-dark mb-4">
                         Clear prices. Order on the app.
                     </h2>
                     <p className="text-slate-600 text-base md:text-lg font-medium max-w-2xl mx-auto">
                         See ages and prices here. Choose quantity, pay with M-Pesa, and get
                         confirmation on{" "}
-                        <span className="font-bold text-[#0F172A]">app.kukuconnect.co.ke</span>.
+                        <span className="font-bold text-surface-dark">app.kukuconnect.co.ke</span>.
                     </p>
                 </div>
 
@@ -207,22 +207,22 @@ export default function OrderCta() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="max-w-3xl mx-auto mb-16 bg-white border-2 border-[#C2410C]/10 rounded-3xl p-6 md:p-8 shadow-lg shadow-[#C2410C]/5 relative overflow-hidden"
+                    className="max-w-3xl mx-auto mb-16 bg-white border-2 border-brand-dark/10 rounded-3xl p-6 md:p-8 shadow-lg shadow-brand-dark/5 relative overflow-hidden"
                 >
-                    <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#C2410C] to-[#FF8A00]" />
+                    <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-dark to-brand-yellow" />
                     <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
                         <div className="flex-1 text-center md:text-left flex flex-col md:flex-row items-center gap-4">
-                            <div className="bg-[#C2410C]/10 text-[#C2410C] p-3 rounded-2xl">
+                            <div className="bg-brand-dark/10 text-brand-dark p-3 rounded-2xl">
                                 <CalendarDays className="w-8 h-8" />
                             </div>
                             <div>
-                                <h3 className="text-xl font-extrabold text-[#0F172A] mb-1">Next Hatching Batch</h3>
+                                <h3 className="text-xl font-extrabold text-surface-dark mb-1">Next Hatching Batch</h3>
                                 <p className="text-slate-500 font-medium text-sm">Reserving now for upcoming delivery</p>
                             </div>
                         </div>
                         <div className="w-full md:w-auto flex-1">
                             <div className="flex justify-between text-sm font-bold mb-2.5">
-                                <span className="text-[#C2410C]">85% Reserved</span>
+                                <span className="text-brand-dark">85% Reserved</span>
                                 <span className="text-slate-400">Only 15% Left</span>
                             </div>
                             <div className="w-full h-3 bg-slate-100 rounded-full overflow-hidden relative">
@@ -231,7 +231,7 @@ export default function OrderCta() {
                                     whileInView={{ width: "85%" }}
                                     transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
                                     viewport={{ once: true }}
-                                    className="h-full bg-gradient-to-r from-[#C2410C] to-[#FF8A00] rounded-full relative"
+                                    className="h-full bg-gradient-to-r from-brand-dark to-brand-yellow rounded-full relative"
                                 >
                                     <div className="absolute inset-0 bg-white/20 animate-pulse" />
                                 </m.div>
@@ -261,7 +261,7 @@ export default function OrderCta() {
                     ))}
                 </div>
 
-                <div className="rounded-[2rem] bg-[#0F172A] text-white p-8 md:p-10 text-center shadow-xl max-w-4xl mx-auto">
+                <div className="rounded-[2rem] bg-surface-dark text-white p-8 md:p-10 text-center shadow-xl max-w-4xl mx-auto">
                     <h3 className="text-2xl md:text-3xl font-extrabold mb-3">
                         Ready to order &amp; pay?
                     </h3>
@@ -272,7 +272,7 @@ export default function OrderCta() {
                     <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center">
                         <a
                             href={ORDER_APP_URL}
-                            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#C2410C] hover:bg-[#ea580c] text-white rounded-full font-bold text-lg shadow-lg shadow-[#C2410C]/30 transition-all hover:-translate-y-0.5"
+                            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-brand-dark hover:bg-brand-hover text-white rounded-full font-bold text-lg shadow-lg shadow-brand-dark/30 transition-all hover:-translate-y-0.5"
                         >
                             Go to order form
                             <ArrowRight className="w-5 h-5" />

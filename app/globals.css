@@ -10,6 +10,19 @@
   --color-primary: #FF6200;
   --color-primary-hover: #EA580C;
 
+  --color-brand-light: #FF5C00;
+  --color-brand-dark: #C2410C;
+  --color-brand-hover: #ea580c;
+  --color-brand-yellow: #FF8A00;
+
+  --color-surface-dark: #0F172A;
+  --color-surface-darker: #0B1120;
+  --color-surface-light: #FAFAFA;
+  --color-surface-cream: #FFFCF8;
+
+  --shadow-glow-primary: 0 0 20px rgba(194, 65, 12, 0.3);
+  --shadow-glow-primary-hover: 0 0 30px rgba(194, 65, 12, 0.5);
+
   --color-secondary: #0A2540;
   --color-accent: #00BFFF;
 

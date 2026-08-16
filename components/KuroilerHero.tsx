@@ -13,18 +13,18 @@ export default function KuroilerHero() {
     const ImageContent = () => (
         <div className="relative w-full aspect-square max-w-[340px] md:max-w-[420px] lg:max-w-[480px] mx-auto mt-4 lg:mt-0">
             {/* Ambient Base Glow */}
-            <div className="absolute inset-0 bg-[#FF5C00]/20 rounded-full blur-[70px] md:blur-[100px] -z-10"></div>
+            <div className="absolute inset-0 bg-brand-light/20 rounded-full blur-[70px] md:blur-[100px] -z-10"></div>
 
             {/* Organic Background Floating Bokeh / Sunlight Orbs (Out of focus) */}
             <m.div
                 animate={{ y: [-15, 15, -15], x: [-10, 10, -10], opacity: [0.4, 0.7, 0.4] }}
                 transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
-                className="absolute top-[5%] left-[5%] w-24 h-24 md:w-32 md:h-32 bg-gradient-to-tr from-[#FF5C00] to-[#FF8A00] rounded-full blur-xl opacity-40 -z-10"
+                className="absolute top-[5%] left-[5%] w-24 h-24 md:w-32 md:h-32 bg-gradient-to-tr from-brand-light to-brand-yellow rounded-full blur-xl opacity-40 -z-10"
             />
             <m.div
                 animate={{ y: [15, -20, 15], x: [20, -5, 20], opacity: [0.3, 0.6, 0.3] }}
                 transition={{ repeat: Infinity, duration: 10, ease: "easeInOut", delay: 1 }}
-                className="absolute bottom-[15%] right-[5%] w-32 h-32 md:w-48 md:h-48 bg-gradient-to-tr from-[#FF8A00] to-yellow-300 rounded-full blur-2xl opacity-30 -z-10"
+                className="absolute bottom-[15%] right-[5%] w-32 h-32 md:w-48 md:h-48 bg-gradient-to-tr from-brand-yellow to-yellow-300 rounded-full blur-2xl opacity-30 -z-10"
             />
             <m.div
                 animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.5, 0.2] }}
@@ -55,7 +55,7 @@ export default function KuroilerHero() {
             <m.div
                 animate={{ y: [20, -10, 20], x: [-10, 20, -10] }}
                 transition={{ repeat: Infinity, duration: 9, ease: "easeInOut", delay: 0.5 }}
-                className="absolute bottom-[5%] left-[15%] w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-white to-[#FF8A00]/40 rounded-full blur-[14px] opacity-50 z-20 pointer-events-none"
+                className="absolute bottom-[5%] left-[15%] w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-white to-brand-yellow/40 rounded-full blur-[14px] opacity-50 z-20 pointer-events-none"
             />
             <m.div
                 animate={{ y: [-20, 10, -20], x: [10, -15, 10] }}
@@ -66,7 +66,7 @@ export default function KuroilerHero() {
     );
 
     return (
-        <section id="home" className="relative pt-28 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden bg-[#FAFAFA] min-h-[90vh] flex items-center">
+        <section id="home" className="relative pt-28 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden bg-surface-light min-h-[90vh] flex items-center">
             {/* Elegant Corporate Background with subtle glow */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20"></div>
@@ -74,12 +74,12 @@ export default function KuroilerHero() {
                 <m.div
                     animate={{ opacity: [0.3, 0.5, 0.3] }}
                     transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
-                    className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-b from-[#C2410C]/10 to-transparent rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4"
+                    className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-b from-brand-dark/10 to-transparent rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4"
                 />
                 <m.div
                     animate={{ opacity: [0.2, 0.4, 0.2] }}
                     transition={{ repeat: Infinity, duration: 10, ease: "easeInOut", delay: 1 }}
-                    className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-t from-[#FF8A00]/10 to-transparent rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3"
+                    className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-t from-brand-yellow/10 to-transparent rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3"
                 />
             </div>
 
@@ -91,13 +91,13 @@ export default function KuroilerHero() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="w-full lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start"
                 >
-                    <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-[#C2410C]/10 text-[#C2410C] text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em] mb-6 border border-[#C2410C]/20 backdrop-blur-sm shadow-sm">
+                    <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-brand-dark/10 text-brand-dark text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em] mb-6 border border-brand-dark/20 backdrop-blur-sm shadow-sm">
                         KENYAN POULTRY &bull; QUALITY &bull; SUPPORT
                     </span>
 
-                    <h1 className="text-[2.75rem] leading-tight md:text-6xl lg:text-[5rem] font-extrabold text-[#0F172A] mb-6 tracking-tighter">
-                        Your <span className="text-[#C2410C]">Kuku</span>. <br className="hidden md:block" />
-                        Our <span className="text-[#C2410C]">Commitment</span>.
+                    <h1 className="text-[2.75rem] leading-tight md:text-6xl lg:text-[5rem] font-extrabold text-surface-dark mb-6 tracking-tighter">
+                        Your <span className="text-brand-dark">Kuku</span>. <br className="hidden md:block" />
+                        Our <span className="text-brand-dark">Commitment</span>.
                     </h1>
 
                     {/* Mobile Image - Captivating middle placement */}
@@ -112,14 +112,14 @@ export default function KuroilerHero() {
                     <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-12">
                         <a
                             href="https://app.kukuconnect.co.ke/order"
-                            className="px-8 py-4 bg-gradient-to-r from-[#FF5C00] to-[#C2410C] text-white rounded-full font-bold text-lg shadow-[0_0_20px_rgba(194,65,12,0.3)] hover:shadow-[0_0_30px_rgba(194,65,12,0.5)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto"
+                            className="px-8 py-4 bg-gradient-to-r from-brand-light to-brand-dark text-white rounded-full font-bold text-lg shadow-glow-primary hover:shadow-glow-primary-hover hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto"
                         >
                             Order Chicks
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </a>
                         <Link
                             href="/#products"
-                            className="px-8 py-4 bg-white text-[#0F172A] border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center w-full sm:w-auto"
+                            className="px-8 py-4 bg-white text-surface-dark border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center w-full sm:w-auto"
                         >
                             See Prices
                         </Link>
@@ -134,7 +134,7 @@ export default function KuroilerHero() {
                             <span className="text-slate-700 font-medium text-sm md:text-base text-left">Quality Chicks</span>
                         </div>
                         <div className="flex items-center gap-3">
-                            <div className="bg-white p-2 rounded-lg border border-slate-200 text-[#C2410C] shrink-0 shadow-sm">
+                            <div className="bg-white p-2 rounded-lg border border-slate-200 text-brand-dark shrink-0 shadow-sm">
                                 <HeartHandshake className="w-5 h-5" />
                             </div>
                             <span className="text-slate-700 font-medium text-sm md:text-base text-left">Farmer Support</span>

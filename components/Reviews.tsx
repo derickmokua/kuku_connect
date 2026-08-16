@@ -81,7 +81,7 @@ function StarRatingInput({
                         onMouseEnter={() => setHover(n)}
                         onMouseLeave={() => setHover(0)}
                         onClick={() => onChange(n)}
-                        className="p-0.5 transition-transform hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C2410C] rounded"
+                        className="p-0.5 transition-transform hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark rounded"
                     >
                         <Star
                             className={`w-8 h-8 ${
@@ -107,10 +107,10 @@ function ReviewCard({ review, idx }: { review: Review; idx: number }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: Math.min(idx * 0.08, 0.4), duration: 0.5 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-[2.5rem] shadow-lg shadow-slate-200/50 hover:shadow-2xl hover:shadow-[#FF8A00]/20 transition-all duration-300 border border-slate-200 relative group overflow-hidden hover:-translate-y-2 flex flex-col"
+                className="bg-white p-8 rounded-[2.5rem] shadow-lg shadow-slate-200/50 hover:shadow-2xl hover:shadow-brand-yellow/20 transition-all duration-300 border border-slate-200 relative group overflow-hidden hover:-translate-y-2 flex flex-col"
             >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#FF8A00]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute top-8 right-8 text-slate-200 group-hover:text-[#FF8A00]/20 transition-colors">
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-yellow/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-8 right-8 text-slate-200 group-hover:text-brand-yellow/20 transition-colors">
                     <Quote className="w-12 h-12" />
                 </div>
 
@@ -127,7 +127,7 @@ function ReviewCard({ review, idx }: { review: Review; idx: number }) {
                     ))}
                 </div>
 
-                <p className="text-[#0F172A]/80 mb-6 leading-relaxed relative z-10 font-medium flex-1">
+                <p className="text-surface-dark/80 mb-6 leading-relaxed relative z-10 font-medium flex-1">
                     &ldquo;{review.content}&rdquo;
                 </p>
 
@@ -138,7 +138,7 @@ function ReviewCard({ review, idx }: { review: Review; idx: number }) {
                                 key={`${review.id}-photo-${i}`}
                                 type="button"
                                 onClick={() => setLightbox(url)}
-                                className="relative w-16 h-16 rounded-xl overflow-hidden border border-slate-200 hover:border-[#FF8A00] transition shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C2410C]"
+                                className="relative w-16 h-16 rounded-xl overflow-hidden border border-slate-200 hover:border-brand-yellow transition shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark"
                             >
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
@@ -153,11 +153,11 @@ function ReviewCard({ review, idx }: { review: Review; idx: number }) {
                 )}
 
                 <div className="flex items-center gap-4 mt-auto relative z-10">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#C2410C] to-[#ea580c] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-brand-dark to-brand-hover rounded-full flex items-center justify-center text-white font-bold text-lg shadow-md shrink-0">
                         {review.name.charAt(0).toUpperCase()}
                     </div>
                     <div className="min-w-0">
-                        <h3 className="font-bold text-[#0F172A] truncate">{review.name}</h3>
+                        <h3 className="font-bold text-surface-dark truncate">{review.name}</h3>
                         <p className="text-xs text-slate-600 font-bold uppercase tracking-wide truncate">
                             {review.role}
                         </p>
@@ -443,13 +443,13 @@ export default function Reviews() {
     }, [formOpen]);
 
     return (
-        <section id="reviews" className="py-24 px-4 bg-[#FAFAFA]">
+        <section id="reviews" className="py-24 px-4 bg-surface-light">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-12">
-                    <span className="text-[#C2410C] font-bold tracking-wider uppercase text-sm">
+                    <span className="text-brand-dark font-bold tracking-wider uppercase text-sm">
                         Flock Feedback
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-[#0F172A] mt-2 mb-4">
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-surface-dark mt-2 mb-4">
                         Happy Farmers
                     </h2>
                     <p className="text-slate-600 text-lg max-w-2xl mx-auto font-medium mb-6">
@@ -485,7 +485,7 @@ export default function Reviews() {
                                 resetForm();
                                 setFormOpen(true);
                             }}
-                            className="inline-flex items-center gap-2 bg-[#C2410C] hover:bg-[#ea580c] text-white px-7 py-3.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg hover:shadow-[#C2410C]/25 hover:-translate-y-0.5"
+                            className="inline-flex items-center gap-2 bg-brand-dark hover:bg-brand-hover text-white px-7 py-3.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg hover:shadow-brand-dark/25 hover:-translate-y-0.5"
                         >
                             <PenLine className="w-4 h-4" />
                             Review Us
@@ -508,7 +508,7 @@ export default function Reviews() {
                                 resetForm();
                                 setFormOpen(true);
                             }}
-                            className="text-[#C2410C] font-bold underline underline-offset-2"
+                            className="text-brand-dark font-bold underline underline-offset-2"
                         >
                             Review Us
                         </button>
@@ -544,7 +544,7 @@ export default function Reviews() {
                                 <div>
                                     <h3
                                         id="review-form-title"
-                                        className="text-xl font-extrabold text-[#0F172A]"
+                                        className="text-xl font-extrabold text-surface-dark"
                                     >
                                         Leave a Review
                                     </h3>
@@ -568,7 +568,7 @@ export default function Reviews() {
                                         <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-green-50 flex items-center justify-center">
                                             <CheckCircle2 className="w-9 h-9 text-green-600" />
                                         </div>
-                                        <h4 className="text-2xl font-extrabold text-[#0F172A] mb-2">
+                                        <h4 className="text-2xl font-extrabold text-surface-dark mb-2">
                                             Asante!
                                         </h4>
                                         <p className="text-slate-600 font-medium mb-8 leading-relaxed">
@@ -578,7 +578,7 @@ export default function Reviews() {
                                         <button
                                             type="button"
                                             onClick={closeForm}
-                                            className="px-8 py-3 bg-[#C2410C] text-white rounded-full font-bold hover:bg-[#ea580c] transition"
+                                            className="px-8 py-3 bg-brand-dark text-white rounded-full font-bold hover:bg-brand-hover transition"
                                         >
                                             Done
                                         </button>
@@ -615,7 +615,7 @@ export default function Reviews() {
                                                         name: e.target.value,
                                                     }))
                                                 }
-                                                className="w-full px-4 py-3.5 bg-[#FAFAFA] border-2 border-slate-200 rounded-2xl focus:border-[#C2410C] outline-none text-[#0F172A] font-medium transition placeholder-slate-400"
+                                                className="w-full px-4 py-3.5 bg-surface-light border-2 border-slate-200 rounded-2xl focus:border-brand-dark outline-none text-surface-dark font-medium transition placeholder-slate-400"
                                                 placeholder="e.g. Jane Mwikali"
                                                 autoComplete="name"
                                             />
@@ -641,7 +641,7 @@ export default function Reviews() {
                                                         role: e.target.value,
                                                     }))
                                                 }
-                                                className="w-full px-4 py-3.5 bg-[#FAFAFA] border-2 border-slate-200 rounded-2xl focus:border-[#C2410C] outline-none text-[#0F172A] font-medium transition placeholder-slate-400"
+                                                className="w-full px-4 py-3.5 bg-surface-light border-2 border-slate-200 rounded-2xl focus:border-brand-dark outline-none text-surface-dark font-medium transition placeholder-slate-400"
                                                 placeholder="e.g. Poultry Farmer, Kitui"
                                             />
                                         </div>
@@ -665,7 +665,7 @@ export default function Reviews() {
                                                         content: e.target.value,
                                                     }))
                                                 }
-                                                className="w-full px-4 py-3.5 bg-[#FAFAFA] border-2 border-slate-200 rounded-2xl focus:border-[#C2410C] outline-none text-[#0F172A] font-medium transition resize-none placeholder-slate-400"
+                                                className="w-full px-4 py-3.5 bg-surface-light border-2 border-slate-200 rounded-2xl focus:border-brand-dark outline-none text-surface-dark font-medium transition resize-none placeholder-slate-400"
                                                 placeholder="Tell others about the chicks, delivery, support…"
                                             />
                                             <p className="text-xs text-slate-400 text-right">
@@ -694,7 +694,7 @@ export default function Reviews() {
                                                         phone: e.target.value,
                                                     }))
                                                 }
-                                                className="w-full px-4 py-3.5 bg-[#FAFAFA] border-2 border-slate-200 rounded-2xl focus:border-[#C2410C] outline-none text-[#0F172A] font-medium transition placeholder-slate-400"
+                                                className="w-full px-4 py-3.5 bg-surface-light border-2 border-slate-200 rounded-2xl focus:border-brand-dark outline-none text-surface-dark font-medium transition placeholder-slate-400"
                                                 placeholder="07XX XXX XXX"
                                                 autoComplete="tel"
                                             />
@@ -739,7 +739,7 @@ export default function Reviews() {
                                                 <button
                                                     type="button"
                                                     onClick={() => fileInputRef.current?.click()}
-                                                    className="w-full flex flex-col items-center justify-center gap-2 py-6 px-4 border-2 border-dashed border-slate-200 rounded-2xl hover:border-[#C2410C] hover:bg-[#C2410C]/5 transition text-slate-500 hover:text-[#C2410C]"
+                                                    className="w-full flex flex-col items-center justify-center gap-2 py-6 px-4 border-2 border-dashed border-slate-200 rounded-2xl hover:border-brand-dark hover:bg-brand-dark/5 transition text-slate-500 hover:text-brand-dark"
                                                 >
                                                     <ImagePlus className="w-7 h-7" />
                                                     <span className="text-sm font-bold">
@@ -772,7 +772,7 @@ export default function Reviews() {
                                         <button
                                             type="submit"
                                             disabled={submitting}
-                                            className="w-full py-4 bg-[#C2410C] text-white rounded-full font-bold text-lg hover:shadow-lg hover:shadow-[#C2410C]/20 transition flex items-center justify-center gap-3 disabled:opacity-70 hover:-translate-y-0.5"
+                                            className="w-full py-4 bg-brand-dark text-white rounded-full font-bold text-lg hover:shadow-lg hover:shadow-brand-dark/20 transition flex items-center justify-center gap-3 disabled:opacity-70 hover:-translate-y-0.5"
                                         >
                                             {submitting ? (
                                                 <>

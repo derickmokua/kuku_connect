@@ -93,9 +93,9 @@ const products = {
 /** Full catalogue of price cards — no cart; order on FMS. */
 export default function ProductShowcase() {
     return (
-        <section id="products" className="py-20 px-4 bg-[#FAFAFA]">
+        <section id="products" className="py-20 px-4 bg-surface-light">
             <div className="max-w-7xl mx-auto mb-16 text-center">
-                <h2 className="text-4xl font-extrabold text-[#0F172A] mb-4">Our flock &amp; hatch</h2>
+                <h2 className="text-4xl font-extrabold text-surface-dark mb-4">Our flock &amp; hatch</h2>
                 <p className="text-[#6B7280] text-lg max-w-2xl mx-auto">
                     Prices only on this site. Quantity, cart, and M-Pesa payment are on the order
                     app.
@@ -105,7 +105,7 @@ export default function ProductShowcase() {
             <div className="max-w-7xl mx-auto mb-20">
                 <div className="flex items-center gap-4 mb-8">
                     <div className="h-px bg-slate-200 flex-1" />
-                    <h3 className="text-2xl font-bold text-[#FF8A00] uppercase tracking-widest">
+                    <h3 className="text-2xl font-bold text-brand-yellow uppercase tracking-widest">
                         Chicks (day old – 1 month)
                     </h3>
                     <div className="h-px bg-slate-200 flex-1" />
@@ -120,7 +120,7 @@ export default function ProductShowcase() {
             <div className="max-w-7xl mx-auto mb-20">
                 <div className="flex items-center gap-4 mb-8">
                     <div className="h-px bg-slate-200 flex-1" />
-                    <h3 className="text-2xl font-bold text-[#FF8A00] uppercase tracking-widest">
+                    <h3 className="text-2xl font-bold text-brand-yellow uppercase tracking-widest">
                         Mature chicken
                     </h3>
                     <div className="h-px bg-slate-200 flex-1" />
@@ -135,7 +135,7 @@ export default function ProductShowcase() {
             <div className="max-w-7xl mx-auto">
                 <div className="flex items-center gap-4 mb-8">
                     <div className="h-px bg-slate-200 flex-1" />
-                    <h3 className="text-2xl font-bold text-[#FF8A00] uppercase tracking-widest">
+                    <h3 className="text-2xl font-bold text-brand-yellow uppercase tracking-widest">
                         Fresh eggs
                     </h3>
                     <div className="h-px bg-slate-200 flex-1" />
@@ -170,18 +170,18 @@ function ProductCard({
             viewport={{ once: true }}
             className={`relative flex flex-col p-8 transition-all duration-300 bg-white rounded-[2.5rem] shadow-lg shadow-slate-200/50 group overflow-hidden hover:-translate-y-2 hover:shadow-2xl ${
                 product.recommended
-                    ? "border-2 border-[#FF8A00] ring-4 ring-[#FF8A00]/10"
-                    : "border border-slate-200 hover:border-[#FF8A00]/30 hover:shadow-[#FF8A00]/10"
+                    ? "border-2 border-brand-yellow ring-4 ring-brand-yellow/10"
+                    : "border border-slate-200 hover:border-brand-yellow/30 hover:shadow-brand-yellow/10"
             }`}
         >
             <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             {product.recommended && (
-                <div className="absolute top-0 right-0 left-0 bg-gradient-to-r from-[#FF8A00] to-[#FF6B00] text-white text-xs font-bold px-4 py-2 text-center uppercase tracking-widest shadow-sm">
+                <div className="absolute top-0 right-0 left-0 bg-gradient-to-r from-brand-yellow to-[#FF6B00] text-white text-xs font-bold px-4 py-2 text-center uppercase tracking-widest shadow-sm">
                     Most popular
                 </div>
             )}
 
-            <h3 className={`text-xl font-extrabold text-[#0F172A] text-center mb-2 ${product.recommended ? "mt-8" : "mt-2"}`}>
+            <h3 className={`text-xl font-extrabold text-surface-dark text-center mb-2 ${product.recommended ? "mt-8" : "mt-2"}`}>
                 {product.title}
             </h3>
 
@@ -190,8 +190,8 @@ function ProductCard({
             </p>
 
             <div className="flex justify-center items-baseline mb-6 space-x-1 border-t border-slate-200/60 pt-6 w-full">
-                <span className="text-lg font-bold text-[#0F172A] self-start mt-2">KES</span>
-                <span className="text-5xl font-extrabold text-[#0F172A] tracking-tight">
+                <span className="text-lg font-bold text-surface-dark self-start mt-2">KES</span>
+                <span className="text-5xl font-extrabold text-surface-dark tracking-tight">
                     {product.price}
                 </span>
                 {product.unit && (
@@ -214,7 +214,7 @@ function ProductCard({
                 <a
                     href={ORDER_APP_URL}
                     aria-label={`Order ${product.title} on app`}
-                    className="w-full py-4 text-white rounded-full font-bold text-lg flex items-center justify-center gap-2 shadow-lg shadow-[#FF8A00]/20 hover:shadow-xl transition-all transform hover:-translate-y-0.5 bg-gradient-to-r from-[#FF8A00] to-[#FF6B00]"
+                    className="w-full py-4 text-white rounded-full font-bold text-lg flex items-center justify-center gap-2 shadow-lg shadow-brand-yellow/20 hover:shadow-xl transition-all transform hover:-translate-y-0.5 bg-gradient-to-r from-brand-yellow to-[#FF6B00]"
                 >
                     Order on app <ArrowRight className="w-5 h-5" />
                 </a>

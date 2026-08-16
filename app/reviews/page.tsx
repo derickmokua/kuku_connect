@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ReviewsPage() {
     return (
-        <div className="min-h-screen bg-[#FAFAFA]">
+        <div className="min-h-screen bg-surface-light">
             <Navbar />
             <main className="pt-20">
                 <Reviews />

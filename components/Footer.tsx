@@ -6,13 +6,13 @@ import { Phone, Mail, MapPin, Facebook, Instagram, MessageCircle } from "lucide-
 import { useChat } from "./context/ChatContext";
 
 const SOCIAL_ICON_CLASS =
-    "w-12 h-12 bg-white/5 border border-white/10 rounded-2xl hover:bg-gradient-to-r hover:from-[#C2410C] hover:to-[#ea580c] hover:border-transparent hover:text-white text-slate-300 transition-all duration-300 hover:-translate-y-1 shadow-sm flex items-center justify-center shrink-0";
+    "w-12 h-12 bg-white/5 border border-white/10 rounded-2xl hover:bg-gradient-to-r hover:from-brand-dark hover:to-brand-hover hover:border-transparent hover:text-white text-slate-300 transition-all duration-300 hover:-translate-y-1 shadow-sm flex items-center justify-center shrink-0";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#0B1120] text-slate-300 pt-24 pb-12 border-t border-white/10 relative overflow-hidden">
+        <footer className="bg-surface-darker text-slate-300 pt-24 pb-12 border-t border-white/10 relative overflow-hidden">
             {/* Subtle premium background glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[400px] bg-[#C2410C]/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[400px] bg-brand-dark/10 rounded-full blur-[120px] pointer-events-none"></div>
             
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
@@ -20,7 +20,7 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="space-y-6">
                         <div className="flex items-center space-x-3">
-                            <span className="font-extrabold text-3xl text-white tracking-tight">Kuku<span className="text-[#C2410C]">Connect.</span></span>
+                            <span className="font-extrabold text-3xl text-white tracking-tight">Kuku<span className="text-brand-dark">Connect.</span></span>
                         </div>
                         <p className="text-slate-300 text-sm leading-relaxed max-w-xs font-medium">
                             The High-Yield Poultry System. We supply hardened Kuroilers and the scientific routine to ensure your success.
@@ -37,16 +37,16 @@ export default function Footer() {
                                         process.env.NEXT_PUBLIC_ORDER_URL ||
                                         "https://app.kukuconnect.co.ke/order"
                                     }
-                                    className="hover:text-[#C2410C] transition-colors"
+                                    className="hover:text-brand-dark transition-colors"
                                 >
                                     Order chicks
                                 </a>
                             </li>
-                            <li><Link href="/#products" className="hover:text-[#C2410C] transition-colors">Prices</Link></li>
-                            <li><Link href="/#reviews" className="hover:text-[#C2410C] transition-colors">Reviews</Link></li>
-                            <li><Link href="/#vaccination" className="hover:text-[#C2410C] transition-colors">Immunity Protocol</Link></li>
-                            <li><Link href="/#care-guide" className="hover:text-[#C2410C] transition-colors">Success Routine</Link></li>
-                            <li><Link href="/#contact" className="hover:text-[#C2410C] transition-colors">Contact</Link></li>
+                            <li><Link href="/#products" className="hover:text-brand-dark transition-colors">Prices</Link></li>
+                            <li><Link href="/#reviews" className="hover:text-brand-dark transition-colors">Reviews</Link></li>
+                            <li><Link href="/#vaccination" className="hover:text-brand-dark transition-colors">Immunity Protocol</Link></li>
+                            <li><Link href="/#care-guide" className="hover:text-brand-dark transition-colors">Success Routine</Link></li>
+                            <li><Link href="/#contact" className="hover:text-brand-dark transition-colors">Contact</Link></li>
                         </ul>
                     </div>
 
@@ -56,17 +56,17 @@ export default function Footer() {
                         <ul className="space-y-4 text-sm font-medium">
                             <li className="flex items-center hover:text-white transition-colors">
                                 <Link href="/assistant" className="flex items-center gap-3 w-full">
-                                    <MessageCircle className="w-5 h-5 text-[#C2410C]" /> AI Assistant
+                                    <MessageCircle className="w-5 h-5 text-brand-dark" /> AI Assistant
                                 </Link>
                             </li>
                             <li className="flex items-center gap-3 hover:text-white transition-colors">
-                                <Phone className="w-5 h-5 text-[#C2410C]" /> +254 716883375
+                                <Phone className="w-5 h-5 text-brand-dark" /> +254 716883375
                             </li>
                             <li className="flex items-center gap-3 hover:text-white transition-colors">
-                                <Mail className="w-5 h-5 text-[#C2410C]" /> kukuconnect@outlook.com
+                                <Mail className="w-5 h-5 text-brand-dark" /> kukuconnect@outlook.com
                             </li>
                             <li className="flex items-center gap-3 hover:text-white transition-colors">
-                                <MapPin className="w-5 h-5 text-[#C2410C]" /> Kitui, Kenya
+                                <MapPin className="w-5 h-5 text-brand-dark" /> Kitui, Kenya
                             </li>
                         </ul>
                     </div>
@@ -79,7 +79,7 @@ export default function Footer() {
                             href="https://whatsapp.com/channel/0029Vb7SHEpATRSeRbs3AK0X"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center px-6 py-4 bg-gradient-to-r from-[#C2410C] to-[#ea580c] text-white rounded-2xl font-bold text-sm hover:shadow-lg hover:shadow-[#C2410C]/30 transition-all duration-300 w-full hover:-translate-y-1 group"
+                            className="inline-flex items-center justify-center px-6 py-4 bg-gradient-to-r from-brand-dark to-brand-hover text-white rounded-2xl font-bold text-sm hover:shadow-lg hover:shadow-brand-dark/30 transition-all duration-300 w-full hover:-translate-y-1 group"
                         >
                             Follow Channel
                         </a>
