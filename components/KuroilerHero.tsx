@@ -117,12 +117,12 @@ export default function KuroilerHero() {
                             Order Chicks
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </a>
-                        <Link
-                            href="/#products"
+                        <a
+                            href="#products"
                             className="px-8 py-4 bg-white text-surface-dark border border-slate-200 rounded-full font-bold text-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center w-full sm:w-auto"
                         >
                             See Prices
-                        </Link>
+                        </a>
                     </div>
 
                     {/* Corporate Trust Indicators */}
