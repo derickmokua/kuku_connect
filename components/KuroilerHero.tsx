@@ -40,8 +40,8 @@ export default function KuroilerHero() {
             >
                 <div className="relative w-full h-full">
                     <Image
-                        src="/vector_chick_hero_nobg.png"
-                        alt="Beautiful Vector KukuConnect Chick Illustration"
+                        src="/chicks_enhanced_nobg.png"
+                        alt="Vector KukuConnect Chick Illustration"
                         priority
                         fetchPriority="high"
                         fill
