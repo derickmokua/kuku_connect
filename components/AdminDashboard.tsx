@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { onAuthStateChanged, signInAnonymously } from "firebase/auth";
-import { collection, query, onSnapshot, doc, updateDoc, orderBy, limit } from "firebase/firestore";
-import { Users, Shield, Phone, BarChart, Save, CheckCircle, Star, MessageSquareQuote, XCircle } from "lucide-react";
+import { collection, query, onSnapshot, doc, updateDoc, setDoc, orderBy, limit } from "firebase/firestore";
+import { Users, Shield, Phone, BarChart, Save, CheckCircle, Star, MessageSquareQuote, XCircle, Calendar } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
 import { auth, db, getPublicCollectionPath } from "@/lib/firebase/client";
 
@@ -13,10 +13,7 @@ export default function AdminDashboard() {
     const [isAuthReady, setIsAuthReady] = useState(false);
     const [userId, setUserId] = useState<string | null>(null);
     const [leads, setLeads] = useState<any[]>([]);
-    const [products, setProducts] = useState<any[]>([]);
     const [reviews, setReviews] = useState<any[]>([]);
-    const [editingStocks, setEditingStocks] = useState<{ [key: string]: number }>({});
-    const [reviewFilter, setReviewFilter] = useState<"all" | "pending" | "approved" | "rejected">("pending");
 
     // Ref to prevent notification on mount
     const initialLoadLeads = useRef(true);
@@ -87,14 +84,13 @@ export default function AdminDashboard() {
             }
         );
 
-        // Fetch Products
-        const productsQuery = query(collection(db, getPublicCollectionPath("products")));
-        const unsubscribeProducts = onSnapshot(productsQuery, (snapshot) => {
-            const fetchedProducts = snapshot.docs.map((d) => ({
-                id: d.id,
-                ...d.data(),
-            }));
-            setProducts(fetchedProducts);
+
+        // Fetch Settings
+        const settingsDocRef = doc(db, getPublicCollectionPath("settings"), "site_config");
+        const unsubscribeSettings = onSnapshot(settingsDocRef, (docSnap) => {
+            if (docSnap.exists() && docSnap.data().nextHatchingDate) {
+                setHatchDate(docSnap.data().nextHatchingDate);
+            }
         });
 
         // Fetch customer reviews
@@ -152,7 +148,7 @@ export default function AdminDashboard() {
 
         return () => {
             unsubscribeLeads();
-            unsubscribeProducts();
+            unsubscribeSettings();
             unsubscribeReviews();
         };
     }, [isAuthReady]);
@@ -166,12 +162,6 @@ export default function AdminDashboard() {
         });
     }, [leads]);
 
-    const totalChicks = useMemo(() => {
-        return products.reduce(
-            (acc, p) => (p.age !== "Full-grown" ? acc + (Number(p.stock) || 0) : acc),
-            0
-        );
-    }, [products]);
 
     // 4. Action Handlers
     const toggleContacted = async (leadId: string, currentStatus: boolean) => {
@@ -186,18 +176,16 @@ export default function AdminDashboard() {
         }
     };
 
-    const handleStockUpdate = async (productId: string, newStock: number | string) => {
-        const stockNum = typeof newStock === 'string' ? parseInt(newStock, 10) : newStock;
-        if (isNaN(stockNum)) return;
 
+    const handleHatchDateSave = async () => {
         try {
             if (!db) return;
-            const productRef = doc(db, getPublicCollectionPath("products"), productId);
-            await updateDoc(productRef, { stock: stockNum });
-            toast.success("Stock updated successfully.");
+            const docRef = doc(db, getPublicCollectionPath("settings"), "site_config");
+            await setDoc(docRef, { nextHatchingDate: hatchDate }, { merge: true });
+            toast.success("Hatching date updated successfully.");
         } catch (error) {
-            toast.error("Failed to update stock.");
-            console.error("Error updating stock:", error);
+            toast.error("Failed to update hatching date.");
+            console.error("Error updating settings:", error);
         }
     };
 
@@ -276,12 +264,6 @@ export default function AdminDashboard() {
                         color="bg-white"
                     />
                     <StatCard
-                        title="Live Stock (Chicks)"
-                        value={totalChicks.toLocaleString("en-KE")}
-                        icon={<Shield />}
-                        color="bg-white"
-                    />
-                    <StatCard
                         title="Pending Reviews"
                         value={pendingReviewsCount}
                         icon={<MessageSquareQuote />}
@@ -295,35 +277,32 @@ export default function AdminDashboard() {
                     />
                 </div>
 
-                {/* Stock Editor Block */}
+
+                {/* Site Settings Block */}
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-10 p-6">
                     <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                        Live Stock Editor
+                        <Calendar className="w-5 h-5 text-amber-500 mr-2" />
+                        Site Settings
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {products.map(product => {
-                            const currentVal = editingStocks[product.id] !== undefined ? editingStocks[product.id] : (product.stock || 0);
-                            return (
-                                <div key={product.id} className="p-4 border border-gray-100 bg-gray-50 rounded-lg flex flex-col transition-all hover:bg-white hover:border-amber-200">
-                                    <div className="font-semibold text-gray-900 mb-2 truncate" title={product.name}>{product.name} ({product.age || "Unknown Age"})</div>
-                                    <div className="flex items-center mt-auto">
-                                        <input
-                                            type="number"
-                                            className="border border-gray-300 rounded-lg p-2.5 text-sm w-full outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 mr-2 bg-white"
-                                            value={currentVal}
-                                            onChange={(e) => setEditingStocks({ ...editingStocks, [product.id]: parseInt(e.target.value) || 0 })}
-                                        />
-                                        <button
-                                            onClick={() => handleStockUpdate(product.id, currentVal)}
-                                            className="bg-gray-900 hover:bg-amber-500 text-white rounded-lg p-2.5 flex items-center shadow-sm transition-all flex-shrink-0"
-                                            title="Save Stock"
-                                        >
-                                            <Save className="w-5 h-5" />
-                                        </button>
-                                    </div>
-                                </div>
-                            );
-                        })}
+                    <div className="max-w-md">
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Next Hatching Date</label>
+                        <p className="text-xs text-gray-500 mb-4">This appears on the homepage under Trust & Logistics.</p>
+                        <div className="flex items-center">
+                            <input
+                                type="text"
+                                className="border border-gray-300 rounded-lg p-2.5 text-sm w-full outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 mr-2 bg-white text-gray-900"
+                                value={hatchDate}
+                                onChange={(e) => setHatchDate(e.target.value)}
+                                placeholder="e.g. Friday, 14th Jan"
+                            />
+                            <button
+                                onClick={handleHatchDateSave}
+                                className="bg-gray-900 hover:bg-amber-500 text-white rounded-lg px-4 py-2.5 flex items-center shadow-sm transition-all flex-shrink-0"
+                            >
+                                <Save className="w-4 h-4 mr-2" />
+                                Save
+                            </button>
+                        </div>
                     </div>
                 </div>
 

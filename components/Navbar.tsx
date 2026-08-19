@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { useChat } from "./context/ChatContext";
+import { ORDER_APP_URL } from "@/lib/constants";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,6 +16,7 @@ export default function Navbar() {
         { name: "About us", to: "/#about" },
         { name: "How it works", to: "/#how-it-works" },
         { name: "Reviews", to: "/#reviews" },
+        { name: "Track Order", to: `${ORDER_APP_URL}/track` },
         { name: "Contact", to: "/#contact" },
     ];
 
@@ -46,10 +48,7 @@ export default function Navbar() {
                     {/* Order + Call (Desktop) */}
                     <div className="hidden lg:flex items-center ml-4 gap-3">
                         <a
-                            href={
-                                process.env.NEXT_PUBLIC_ORDER_URL ||
-                                "https://app.kukuconnect.co.ke/order"
-                            }
+                            href={ORDER_APP_URL}
                             className="flex items-center gap-2 bg-brand-dark hover:bg-brand-hover text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
                         >
                             <span>Order</span>
@@ -66,10 +65,7 @@ export default function Navbar() {
                     {/* Mobile Menu Button */}
                     <div className="flex items-center lg:hidden gap-3">
                         <a
-                            href={
-                                process.env.NEXT_PUBLIC_ORDER_URL ||
-                                "https://app.kukuconnect.co.ke/order"
-                            }
+                            href={ORDER_APP_URL}
                             className="px-3 py-2 bg-brand-dark text-white text-xs font-bold rounded-full"
                         >
                             Order
@@ -111,10 +107,7 @@ export default function Navbar() {
                             <span>AI Assistant</span>
                         </Link>
                         <a
-                            href={
-                                process.env.NEXT_PUBLIC_ORDER_URL ||
-                                "https://app.kukuconnect.co.ke/order"
-                            }
+                            href={ORDER_APP_URL}
                             onClick={() => setIsOpen(false)}
                             className="flex items-center justify-center gap-2 w-full bg-brand-dark text-white font-bold text-lg px-4 py-3 rounded-full hover:bg-brand-hover transition mt-2 shadow-lg"
                         >

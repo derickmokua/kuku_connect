@@ -3,10 +3,7 @@
 import React from "react";
 import { ArrowRight, MessageCircle, Phone, CheckCircle, CalendarDays } from "lucide-react";
 import { m } from "framer-motion";
-
-/** Public order app — cart, qty, and payment live on the FMS. */
-export const ORDER_APP_URL =
-    process.env.NEXT_PUBLIC_ORDER_URL || "https://app.kukuconnect.co.ke/order";
+import { ORDER_APP_URL, getOrderUrl } from "@/lib/constants";
 
 const WHATSAPP =
     "https://wa.me/254716883375?text=" +
@@ -107,10 +104,6 @@ const EGG_PRICES: PriceCard[] = [
 
 
 
-function orderUrl(productId?: string) {
-    if (!productId) return ORDER_APP_URL;
-    return `${ORDER_APP_URL}?product=${encodeURIComponent(productId)}`;
-}
 
 function PriceCardView({ card, index = 0 }: { card: PriceCard; index?: number }) {
     return (
@@ -164,7 +157,7 @@ function PriceCardView({ card, index = 0 }: { card: PriceCard; index?: number })
                 </ul>
                 
                 <a
-                    href={orderUrl(card.orderHint)}
+                    href={getOrderUrl(card.orderHint)}
                     aria-label={`Order ${card.label} on app`}
                     className="mt-auto w-full relative inline-flex items-center justify-center gap-2 py-4 rounded-full font-bold text-white bg-surface-dark overflow-hidden group/btn shadow-md hover:shadow-lg transition-all"
                 >

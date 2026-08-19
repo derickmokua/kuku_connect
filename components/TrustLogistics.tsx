@@ -1,9 +1,32 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Heart, Calendar, Truck, MapPin } from "lucide-react";
+import { doc, onSnapshot } from "firebase/firestore";
+import { db, getPublicCollectionPath } from "@/lib/firebase/client";
 
 export default function TrustLogistics() {
+    const [hatchDate, setHatchDate] = useState("Loading...");
+
+    useEffect(() => {
+        try {
+            const unsub = onSnapshot(
+                doc(db, getPublicCollectionPath("settings"), "site_config"), 
+                (docSnap) => {
+                    if (docSnap.exists() && docSnap.data().nextHatchingDate) {
+                        setHatchDate(docSnap.data().nextHatchingDate);
+                    } else {
+                        setHatchDate("Friday, 14th Jan"); // Default fallback
+                    }
+                }
+            );
+            return () => unsub();
+        } catch (error) {
+            console.error("Failed to load hatch date:", error);
+            setHatchDate("Friday, 14th Jan");
+        }
+    }, []);
+
     return (
         <section className="py-20 px-4 bg-surface-light border-t border-slate-200">
             <div className="max-w-6xl mx-auto">
@@ -30,7 +53,7 @@ export default function TrustLogistics() {
                         <p className="text-slate-600 text-sm mb-2">
                             Next incubation batch hatches on:
                         </p>
-                        <p className="text-2xl font-bold text-brand-dark">Friday, 14th Jan</p>
+                        <p className="text-2xl font-bold text-brand-dark">{hatchDate}</p>
                         <button
                             className="mt-4 px-8 py-3 bg-brand-dark text-white font-bold rounded-full shadow-md hover:shadow-lg hover:bg-brand-hover transition-all text-base tracking-wide"
                             onClick={() => window.location.href = '/contact'}

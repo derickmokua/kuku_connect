@@ -5,9 +5,7 @@ import { m } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, HeartHandshake, ShieldCheck } from "lucide-react";
 import Image from "next/image";
-
-
-
+import { ORDER_APP_URL } from "@/lib/constants";
 
 export default function KuroilerHero() {
     const ImageContent = () => (
@@ -111,7 +109,7 @@ export default function KuroilerHero() {
 
                     <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-12">
                         <a
-                            href="https://app.kukuconnect.co.ke/order"
+                            href={ORDER_APP_URL}
                             className="px-8 py-4 bg-gradient-to-r from-brand-light to-brand-dark text-white rounded-full font-bold text-lg shadow-glow-primary hover:shadow-glow-primary-hover hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto"
                         >
                             Order Chicks

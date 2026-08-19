@@ -31,16 +31,47 @@ A visual vaccination schedule that demystifies bio-security. It shows exactly wh
 
 ---
 
-## 🛠️ The Tech Stack
+## The Two-App Architecture
 
-Built for **Speed, SEO, and Reliability**.
+KukuConnect uses a separated architecture to ensure the marketing site remains fast and focused, while operational data is handled securely.
 
-- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) + Custom Design System (`#8B4513` Primary, `#FFA64D` Accent)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Database**: [Firebase](https://firebase.google.com/) (Firestore for Leads/Orders)
+1. **KukuConnect Marketing Site (This Repository)**
+   - **Domains**: `kukuconnect.co.ke` / `www.kukuconnect.co.ke`
+   - **Responsibilities**: Branding, marketing, product discovery, farmer education, SEO, and lead generation.
+   - **Note**: The marketing site *does not* process orders, manage carts, or track inventory.
+
+2. **KukuConnect Farm Management System (FMS)**
+   - **Domain**: `app.kukuconnect.co.ke`
+   - **Responsibilities**: Orders, payments, inventory, sales, fulfillment, farmer operational records, expenses, and staff management.
+   - **Integration**: All order CTAs on the marketing site point to `NEXT_PUBLIC_ORDER_URL`.
+
+Orders and payments are handled exclusively by KukuConnect-FMS.
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide React](https://lucide.dev)
+- **Database (Marketing Features):** [Firebase](https://firebase.google.com) (used strictly for chatbot history, reviews, and contact leads).
 - **AI**: [Google Gemini](https://deepmind.google/technologies/gemini/) (via Vercel AI SDK)
+
+## Getting Started
+
+1. Set up the environment variables:
+
+```bash
+# Order App URL (FMS)
+NEXT_PUBLIC_ORDER_URL=https://app.kukuconnect.co.ke/order
+
+# Firebase configuration (For marketing leads and reviews)
+NEXT_PUBLIC_FIREBASE_API_KEY="your-api-key"
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN="your-auth-domain"
+NEXT_PUBLIC_FIREBASE_PROJECT_ID="your-project-id"
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET="your-storage-bucket"
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID="your-sender-id"
+NEXT_PUBLIC_FIREBASE_APP_ID="your-app-id"
+```
 
 ---
 

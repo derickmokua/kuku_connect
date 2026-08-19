@@ -3,9 +3,7 @@
 import React from "react";
 import { m } from "framer-motion";
 import { CheckCircle, ArrowRight } from "lucide-react";
-
-const ORDER_APP_URL =
-    process.env.NEXT_PUBLIC_ORDER_URL || "https://app.kukuconnect.co.ke/order";
+import { ORDER_APP_URL, getOrderUrl } from "@/lib/constants";
 
 const products = {
     chicks: [
@@ -212,7 +210,7 @@ function ProductCard({
 
             <div className="mt-auto">
                 <a
-                    href={ORDER_APP_URL}
+                    href={getOrderUrl(product.id)}
                     aria-label={`Order ${product.title} on app`}
                     className="w-full py-4 text-white rounded-full font-bold text-lg flex items-center justify-center gap-2 shadow-lg shadow-brand-yellow/20 hover:shadow-xl transition-all transform hover:-translate-y-0.5 bg-gradient-to-r from-brand-yellow to-[#FF6B00]"
                 >

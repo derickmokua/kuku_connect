@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Facebook, Instagram, MessageCircle } from "lucide-react";
 import { useChat } from "./context/ChatContext";
+import { ORDER_APP_URL } from "@/lib/constants";
 
 const SOCIAL_ICON_CLASS =
     "w-12 h-12 bg-white/5 border border-white/10 rounded-2xl hover:bg-gradient-to-r hover:from-brand-dark hover:to-brand-hover hover:border-transparent hover:text-white text-slate-300 transition-all duration-300 hover:-translate-y-1 shadow-sm flex items-center justify-center shrink-0";
@@ -33,13 +34,18 @@ export default function Footer() {
                         <ul className="space-y-4 text-sm font-medium">
                             <li>
                                 <a
-                                    href={
-                                        process.env.NEXT_PUBLIC_ORDER_URL ||
-                                        "https://app.kukuconnect.co.ke/order"
-                                    }
+                                    href={ORDER_APP_URL}
                                     className="hover:text-brand-dark transition-colors"
                                 >
                                     Order chicks
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href={`${ORDER_APP_URL}/track`}
+                                    className="hover:text-brand-dark transition-colors"
+                                >
+                                    Track Order
                                 </a>
                             </li>
                             <li><Link href="/#products" className="hover:text-brand-dark transition-colors">Prices</Link></li>
@@ -119,8 +125,11 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-8 mt-12 flex justify-center items-center gap-4 text-xs font-bold text-slate-400">
+                <div className="border-t border-white/10 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-slate-400">
                     <p>© {new Date().getFullYear()} KukuConnect. All rights reserved.</p>
+                    <a href="https://app.kukuconnect.co.ke/login" className="hover:text-white transition-colors">
+                        Staff Login
+                    </a>
                 </div>
             </div>
         </footer>
