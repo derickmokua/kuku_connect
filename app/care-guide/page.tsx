@@ -85,7 +85,7 @@ export default function CareGuidePage() {
                         <h2 className="text-3xl font-bold mb-4">Ready to start?</h2>
                         <p className="text-gray-400 mb-8">Get high-quality vaccinated chicks today and apply what you've learned.</p>
                         <Link href="/#products" className="inline-block px-8 py-4 bg-[#F57C00] text-white rounded-full font-bold hover:bg-[#E65100] transition">
-                            Order Chicks Now
+                            Place Order Now
                         </Link>
                     </div>
                     <div className="absolute top-0 right-0 opacity-10 transform translate-x-12 -translate-y-12">

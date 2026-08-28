@@ -30,28 +30,21 @@ export default function Footer() {
 
                     {/* Links */}
                     <div>
-                        <h3 className="font-bold text-white text-lg mb-6">System Links</h3>
+                        <h3 className="font-bold text-white text-lg mb-6">Links</h3>
                         <ul className="space-y-4 text-sm font-medium">
                             <li>
                                 <a
                                     href={ORDER_APP_URL}
                                     className="hover:text-brand-dark transition-colors"
                                 >
-                                    Order chicks
+                                    Place Order
                                 </a>
                             </li>
-                            <li>
-                                <a
-                                    href={`${ORDER_APP_URL}/track`}
-                                    className="hover:text-brand-dark transition-colors"
-                                >
-                                    Track Order
-                                </a>
-                            </li>
-                            <li><Link href="/#products" className="hover:text-brand-dark transition-colors">Prices</Link></li>
-                            <li><Link href="/#reviews" className="hover:text-brand-dark transition-colors">Reviews</Link></li>
-                            <li><Link href="/#vaccination" className="hover:text-brand-dark transition-colors">Immunity Protocol</Link></li>
-                            <li><Link href="/#care-guide" className="hover:text-brand-dark transition-colors">Success Routine</Link></li>
+                            <li><Link href="/#products" className="hover:text-brand-dark transition-colors">Products</Link></li>
+                            <li><Link href="/#why-kukuconnect" className="hover:text-brand-dark transition-colors">Why Us</Link></li>
+                            <li><Link href="/#how-it-works" className="hover:text-brand-dark transition-colors">Guide</Link></li>
+                            <li><Link href="/#vaccination" className="hover:text-brand-dark transition-colors">Care</Link></li>
+                            <li><Link href="/#about" className="hover:text-brand-dark transition-colors">About</Link></li>
                             <li><Link href="/#contact" className="hover:text-brand-dark transition-colors">Contact</Link></li>
                         </ul>
                     </div>
@@ -125,11 +118,8 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="border-t border-white/10 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-slate-400">
+                <div className="border-t border-white/10 pt-8 mt-12 flex justify-center items-center text-xs font-bold text-slate-400">
                     <p>© {new Date().getFullYear()} KukuConnect. All rights reserved.</p>
-                    <a href="https://app.kukuconnect.co.ke/login" className="hover:text-white transition-colors">
-                        Staff Login
-                    </a>
                 </div>
             </div>
         </footer>

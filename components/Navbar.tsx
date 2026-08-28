@@ -12,11 +12,11 @@ export default function Navbar() {
 
     const links = [
         { name: "Home", to: "/#home" },
-        { name: "Prices", to: "/#products" },
-        { name: "About us", to: "/#about" },
-        { name: "How it works", to: "/#how-it-works" },
-        { name: "Reviews", to: "/#reviews" },
-        { name: "Track Order", to: `${ORDER_APP_URL}/track` },
+        { name: "Products", to: "/#products" },
+        { name: "Why Us", to: "/#why-kukuconnect" },
+        { name: "Guide", to: "/#how-it-works" },
+        { name: "Care", to: "/#vaccination" },
+        { name: "About", to: "/#about" },
         { name: "Contact", to: "/#contact" },
     ];
 
@@ -38,27 +38,20 @@ export default function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.to}
-                                className="text-surface-dark hover:text-brand-yellow text-sm font-bold px-4 py-2 rounded-full transition-all cursor-pointer hover:bg-slate-100"
+                                className="text-surface-dark hover:text-brand-yellow text-sm font-bold px-3 py-2 rounded-full transition-all cursor-pointer hover:bg-slate-100"
                             >
                                 {link.name}
                             </Link>
                         ))}
                     </div>
 
-                    {/* Order + Call (Desktop) */}
+                    {/* Order (Desktop) */}
                     <div className="hidden lg:flex items-center ml-4 gap-3">
                         <a
                             href={ORDER_APP_URL}
                             className="flex items-center gap-2 bg-brand-dark hover:bg-brand-hover text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
                         >
-                            <span>Order</span>
-                        </a>
-                        <a
-                            href="tel:+254716883375"
-                            className="flex items-center gap-2 bg-brand-yellow hover:bg-[#FF8C00] text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-md hover:shadow-lg hover:shadow-brand-yellow/20 hover:-translate-y-0.5"
-                        >
-                            <Phone size={16} className="text-white" />
-                            <span>Call Us</span>
+                            <span>Place Order</span>
                         </a>
                     </div>
 
@@ -69,13 +62,6 @@ export default function Navbar() {
                             className="px-3 py-2 bg-brand-dark text-white text-xs font-bold rounded-full"
                         >
                             Order
-                        </a>
-                        <a
-                            href="tel:+254716883375"
-                            aria-label="Call Us"
-                            className="flex items-center justify-center w-10 h-10 bg-brand-dark/10 rounded-full text-brand-dark hover:bg-brand-dark hover:text-white transition-all"
-                        >
-                            <Phone size={20} />
                         </a>
                         <button aria-label="Menu" onClick={() => setIsOpen(!isOpen)} className="p-2 text-surface-dark hover:bg-slate-200 rounded-full transition">
                             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -111,14 +97,7 @@ export default function Navbar() {
                             onClick={() => setIsOpen(false)}
                             className="flex items-center justify-center gap-2 w-full bg-brand-dark text-white font-bold text-lg px-4 py-3 rounded-full hover:bg-brand-hover transition mt-2 shadow-lg"
                         >
-                            Order chicks
-                        </a>
-                        <a
-                            href="tel:+254716883375"
-                            className="flex items-center justify-center gap-2 w-full bg-brand-yellow text-white font-bold text-lg px-4 py-3 rounded-full hover:bg-[#FF8C00] transition mt-2 shadow-lg shadow-brand-yellow/20"
-                        >
-                            <Phone size={20} className="text-white" />
-                            <span>Call Us: +254 716883375</span>
+                            Place Order
                         </a>
                     </div>
                 </div>

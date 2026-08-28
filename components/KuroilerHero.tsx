@@ -9,7 +9,7 @@ import { ORDER_APP_URL } from "@/lib/constants";
 
 export default function KuroilerHero() {
     const ImageContent = () => (
-        <div className="relative w-full aspect-square max-w-[340px] md:max-w-[420px] lg:max-w-[480px] mx-auto mt-4 lg:mt-0">
+        <div className="relative w-full h-[340px] md:h-[420px] lg:h-[480px] max-w-[340px] md:max-w-[420px] lg:max-w-[480px] mx-auto mt-4 lg:mt-0">
             {/* Ambient Base Glow */}
             <div className="absolute inset-0 bg-brand-light/20 rounded-full blur-[70px] md:blur-[100px] -z-10"></div>
 
@@ -38,8 +38,8 @@ export default function KuroilerHero() {
             >
                 <div className="relative w-full h-full">
                     <Image
-                        src="/chicks_enhanced_nobg.png"
-                        alt="Vector KukuConnect Chick Illustration"
+                        src="/hero_chickens.webp"
+                        alt="KukuConnect Hero Image"
                         priority
                         fetchPriority="high"
                         fill
@@ -104,7 +104,7 @@ export default function KuroilerHero() {
                     </div>
 
                     <p className="text-base md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl font-medium">
-                        Healthy chicks, practical poultry support, and everything you need to start strong and grow a thriving poultry business.
+                        KukuConnect delivers healthy, high-performing chicks and expert support — so your flock thrives. We're here to help you hatch success, grow your brood, and feather your nest.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-12">
@@ -112,7 +112,7 @@ export default function KuroilerHero() {
                             href={ORDER_APP_URL}
                             className="px-8 py-4 bg-gradient-to-r from-brand-light to-brand-dark text-white rounded-full font-bold text-lg shadow-glow-primary hover:shadow-glow-primary-hover hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto"
                         >
-                            Order Chicks
+                            Place Order
                             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </a>
                         <a

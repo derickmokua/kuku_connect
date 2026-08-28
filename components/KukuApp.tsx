@@ -6,7 +6,6 @@ import KuroilerAdvantages from "./KuroilerAdvantages";
 import dynamic from "next/dynamic";
 
 const OrderCta = dynamic(() => import("./OrderCta"));
-const TrustLogistics = dynamic(() => import("./TrustLogistics"));
 const VaccinationScheduler = dynamic(() => import("./VaccinationScheduler"));
 const CareTimeline = dynamic(() => import("./CareTimeline"));
 const Reviews = dynamic(() => import("./Reviews"));
@@ -24,7 +23,6 @@ export default function KukuApp() {
                 <KuroilerAdvantages />
                 {/* Price cards only — cart & payment on app.kukuconnect.co.ke */}
                 <OrderCta />
-                <TrustLogistics />
                 <AboutUs />
                 <Reviews />
                 <VaccinationScheduler />

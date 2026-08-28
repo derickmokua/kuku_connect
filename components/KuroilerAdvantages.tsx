@@ -27,7 +27,7 @@ const advantages = [
 
 export default function KuroilerAdvantages() {
     return (
-        <section className="py-24 px-4 bg-surface-light border-t border-slate-200">
+        <section id="why-kukuconnect" className="py-24 px-4 bg-surface-light border-t border-slate-200">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <span className="text-brand-dark font-bold tracking-wider uppercase text-sm">Why Choose KukuConnect?</span>
