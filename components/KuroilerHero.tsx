@@ -104,7 +104,7 @@ export default function KuroilerHero() {
                     </div>
 
                     <p className="text-base md:text-xl text-slate-600 mb-10 leading-relaxed max-w-xl font-medium">
-                        KukuConnect delivers healthy, high-performing chicks and expert support — so your flock thrives. We're here to help you hatch success, grow your brood, and feather your nest.
+                        KukuConnect delivers healthy chicks and expert support to help your farm succeed. We are here to help you grow your poultry business.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-12">

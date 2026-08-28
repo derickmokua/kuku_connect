@@ -62,7 +62,7 @@ export default function AboutUs() {
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-yellow">simple & profitable.</span>
                             </h2>
                             <p className="text-lg text-slate-600 leading-relaxed font-medium mb-8">
-                                The hardest part of farming is the first 21 days—where most chicks are lost to cold and disease. We take on this risk for you. We raise the chicks through their most fragile stage using professional brooding systems, so you get strong, healthy birds ready to grow.
+                                The hardest part of farming is the first 21 days because chicks easily fall sick. We take this risk for you. We raise the chicks in safe brooders until they are strong and ready for your farm.
                             </p>
                         </div>
 
